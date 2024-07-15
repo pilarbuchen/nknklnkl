@@ -9,6 +9,7 @@ import { useAddToCart, useProduct } from '../../api/api-hooks';
 import { useContext, useRef } from 'react';
 import { CartOpenContext } from '../../components/cart/cart-open-context';
 import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
+import { ReactComponent as ScssSvg } from '../../assets/svg/scss.svg';
 
 export interface ProductDetailsPageProps {
     className?: string;
@@ -53,39 +54,58 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ classNam
 
     return (
         <div className={classNames(styles.root, className)}>
+            <div>
+                <div>
+                    <h4>
+                        Heading 4ninlknlkn  nuhuihuhui
+                        jijoijiojiojiojiojiojiojjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+                    </h4>
+                </div>
+            </div>
+            <input type="password" />
+            <div>
+                <ScssSvg>
+                    <div className={styles.grid}>
+                        Text
+                        <h2>Replace content</h2>
+                    </div>
+                </ScssSvg>
+            </div>
             <ProductImages
                 mainImage={product.media?.mainMedia}
                 images={product.media?.items}
                 className={styles.left}
             />
-            <div className={styles.right}>
-                <div>{product.name}</div>
-                {product.price && (
-                    <div className={commonStyles.price}>{product.price?.formatted?.price}</div>
-                )}
+            <div>
+                <div className={styles.right}>
+                    <div>{product.name}</div>
+                    {product.price && (
+                        <div className={commonStyles.price}>{product.price?.formatted?.price}</div>
+                    )}
 
-                <div className={styles.addToCart}>
-                    <label>
-                        Quantity: <br />
-                        <input
-                            ref={quantityInput}
-                            className={classNames(commonStyles.numberInput, styles.quantity)}
-                            type="number"
-                            min={1}
-                            placeholder="1"
-                        />
-                    </label>
-                    <button
-                        onClick={addToCartHandler}
-                        className={classNames(commonStyles.primaryButton, styles.addToCartBtn)}
-                    >
-                        Add to Cart
-                    </button>
+                    <div className={styles.addToCart}>
+                        <label>
+                            Quantity: <br />
+                            <input
+                                ref={quantityInput}
+                                className={classNames(commonStyles.numberInput, styles.quantity)}
+                                type="number"
+                                min={1}
+                                placeholder="1"
+                            />
+                        </label>
+                        <button
+                            onClick={addToCartHandler}
+                            className={classNames(commonStyles.primaryButton, styles.addToCartBtn)}
+                        >
+                            Add to Cart
+                        </button>
+                    </div>
+                    <ProductInfo
+                        className={styles.productInfo}
+                        productInfo={product.additionalInfoSections}
+                    />
                 </div>
-                <ProductInfo
-                    className={styles.productInfo}
-                    productInfo={product.additionalInfoSections}
-                />
             </div>
         </div>
     );

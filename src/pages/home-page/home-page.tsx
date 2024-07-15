@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import styles from './home-page.module.scss';
 import { HeroImage } from './hero-image/hero-image';
 import { ROUTES } from '../../router/config';
 import { Link, useNavigate } from 'react-router-dom';

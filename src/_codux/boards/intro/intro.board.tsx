@@ -7,6 +7,11 @@ export default createBoard({
     name: '🌱 Intro',
     Board: () => (
         <div className={styles.container}>
+            <fieldset>
+                <textarea>
+                    <input type="file" />
+                </textarea>
+            </fieldset>
             <p className={styles.myStyle}>
                 HOW TO USE <br /> E-COMMERCE STARTER?
             </p>

@@ -25,7 +25,7 @@ export const HeroImage = ({
 }: HeroImageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <picture>
+            <picture className={styles.xxx}>
                 <source media="(1400px <= width)" srcSet={xLargeHeroImage} />
                 <source media="(1024px <= width)" srcSet={largeHeroImage} />
                 <source media="(760px <= width)" srcSet={mediumHeroImage} />
@@ -39,7 +39,7 @@ export const HeroImage = ({
                         onClick={onButtonClick}
                         className={classNames(
                             CommonStyles_module.primaryButton,
-                            styles['overlay-button']
+                            styles['overlay-button'],
                         )}
                     >
                         {buttonLabel}
